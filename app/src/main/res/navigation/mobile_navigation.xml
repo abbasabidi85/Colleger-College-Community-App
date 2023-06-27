@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.abs.colleger.app.student.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home"/>
+
+    <fragment
+        android:id="@+id/navigation_timetable"
+        android:name="com.abs.colleger.app.student.timetable.UserTimetableFragment"
+        android:label="Timetable"
+        tools:layout="@layout/activity_user_timetable"/>
+
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="com.abs.colleger.app.student.newsfeed.newsFeedFragment"
+        android:label="Events &amp; News"
+        tools:layout="@layout/fragment_news_feed"/>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.abs.colleger.app.student.profile.Profile"
+        android:label="Profile"
+        tools:layout="@layout/activity_admin_profile"/>
+
+
+
+</navigation>

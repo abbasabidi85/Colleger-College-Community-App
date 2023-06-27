@@ -1,0 +1,194 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Colleger</string>
+    <string name="add_events_and_news">Add events and news</string>
+    <string name="add_events">Events &amp; News</string>
+    <string name="add_lost_found">Lost &amp; Found</string>
+    <string name="add_files">Add Files &amp; Question Papers</string>
+    <string name="events">Events</string>
+    <string name="files">Files</string>
+    <string name="add_question_papers">Add question papers</string>
+    <string name="contacts">Contacts</string>
+    <string name="add_faculty_and_others">Add faculty and others</string>
+    <string name="career">Career</string>
+    <string name="add_career_services">Add career services &amp; placement info</string>
+    <string name="clubs">Clubs</string>
+    <string name="add_clubs_and_societies">Add Clubs and Societies</string>
+    <string name="lost_amp_found"><![CDATA[Lost & Found]]></string>
+    <string name="add_lost_and_found_items">Add lost and found items</string>
+    <string name="arrow"><![CDATA[<]]></string>
+
+
+    <string-array name="LostFound">
+        <item>Lost</item>
+        <item>Found</item>
+    </string-array>
+
+    <string-array name="Club">
+        <item>Club</item>
+        <item>Society</item>
+    </string-array>
+
+    <string-array name="Career">
+        <item>Placements</item>
+        <item>Certificate Courses</item>
+    </string-array>
+
+    <string-array name="Weekdays">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+    </string-array>
+
+    <string-array name="Courses">
+        <item>BCA</item>
+        <item>B.Tech</item>
+        <item>B.Pharma</item>
+        <item>BBA</item>
+        <item>MBA</item>
+    </string-array>
+
+    <string-array name="Semesters">
+        <item>1st Semester</item>
+        <item>2nd Semester</item>
+        <item>3rd Semester</item>
+        <item>4th Semester</item>
+        <item>5th Semester</item>
+        <item>6th Semester</item>
+        <item>7th Semester</item>
+        <item>8th Semester</item>
+    </string-array>
+
+    <string-array name="Sections">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+    </string-array>
+
+    <string-array name="Subject">
+        <item>1st Semester</item>
+        <item>2nd Semester</item>
+        <item>3rd Semester</item>
+        <item>4th Semester</item>
+        <item>5th Semester</item>
+        <item>6th Semester</item>
+        <item>7th Semester</item>
+        <item>8th Semester</item>
+    </string-array>
+
+    <string-array name="Schools">
+        <item>School of Chemical &amp; Life Sciences</item>
+        <item>School of Pharmaceutical Education &amp; Research</item>
+        <item>School of Unani Medical Education &amp; Research</item>
+        <item>School of Nursing Sciences &amp; Allied Health</item>
+        <item>School of Engineering Sciences &amp; Technology</item>
+        <item>School of Management &amp; Business Studies</item>
+        <item>School of Humanities &amp; Social Sciences</item>
+        <item>School of Interdisciplinary Sciences &amp; Technology</item>
+    </string-array>
+
+    <string-array name="SchoolOfChemical">
+        <item>Department of Biochemistry</item>
+        <item>Department of Botany</item>
+        <item>Department of Chemistry</item>
+        <item>Department of Medical Elementology &amp; Toxicology</item>
+        <item>Department of Biotechnology</item>
+        <item>Centre for Translational &amp; Clinical Research </item>
+
+    </string-array>
+
+    <string-array name="SchoolOfPharmaceutical">
+        <item>Department of Pharmaceutical Chemistry</item>
+        <item>Department of Pharmaceutics</item>
+        <item>Department of Pharmacology</item>
+        <item>Department of Pharmacognosy &amp; Phytochemistry</item>
+        <item>Maths &amp; Statistics</item>
+    </string-array>
+
+    <string-array name="SchoolOfUnani">
+        <item>Department of Kulliyat</item>
+        <item>Department of Tashreeh ul Badan</item>
+        <item>Department of Munafeul Aza</item>
+        <item>Department of Ilmul Advia</item>
+        <item>Department of Ilmul Saidla</item>
+        <item>Department of Mahiyatul Amraz</item>
+        <item>Department of Tahaffuzi-Wa-Samaji Tib</item>
+        <item>Department of Moalijat</item>
+        <item>Department of Amraz-e-Niswanwa Qabalat</item>
+        <item>Department of Ilmul Atfal</item>
+        <item>Department of Jarahiyat</item>
+        <item>Department of Ain, Uzn, Anaf, Halaq wa Asnan</item>
+        <item>Department of Amraze Jild wa Taziniyat</item>
+        <item>Department of Ilaj-Bit-Tadbeer</item>
+        <item>Majeedia Unani Hospital</item>
+    </string-array>
+    <string-array name="SchoolOfNursing">
+        <item>Department of Rehabilitation Sciences</item>
+        <item>Department of Occupational Therapy </item>
+        <item>Department of Paramedical Science</item>
+        <item>Rufaida College of Nursing</item>
+    </string-array>
+    <string-array name="SchoolOfEngineering">
+        <item>Department of Computer Science</item>
+    </string-array>
+    <string-array name="SchoolOfManagement">
+        <item>Department of Management</item>
+        <item>Department of Healthcare &amp; Pharmaceutical Management</item>
+        <item>Department of Hotel Management &amp; Catering Technology</item>
+        <item>Hamdard Institute of Legal Studies &amp; Research (HILSR)</item>
+        <item>Hamdard Institute of Medical Sciences &amp; Research (HIMSR)</item>
+        <item>J.H. Residential Coaching Academy (JHRCA)</item>
+        <item>CTSI</item>
+    </string-array>
+    <string-array name="SchoolOfHumanities">
+        <item>Department of Islamic Studies</item>
+        <item>Department of Human Rights</item>
+        <item>Centre for Federal Studies</item>
+    </string-array>
+    <string-array name="SchoolOfInterdisciplinary">
+        <item>Department of Food Technology (DOFT)</item>
+        <item>Department of Molecular Medicine (DMM)</item>
+        <item>Centre for Media &amp; Mass Communication Studies (CMMS)</item>
+        <item>Centre for Distance &amp; Online Education (CDOE)</item>
+    </string-array>
+    <string-array name="Designations">
+        <item>HOD-Head of the Department</item>
+        <item>Professor</item>
+        <item>Professor(Contractual)</item>
+        <item>Professor &amp; Dean</item>
+        <item>Professor &amp; Head</item>
+        <item>Assistant Professor</item>
+        <item>Assitant Professor(Contractual)</item>
+        <item>Associate Professor</item>
+        <item>Associate Professor &amp; Head</item>
+        <item>Associate Professor &amp; Principal</item>
+        <item>Teaching Assistant</item>
+        <item>Tutor</item>
+        <item>Clinical Therapist</item>
+        <item>Clinical Instructor</item>
+        <item>Clinical Instructor(Dual Role)</item>
+        <item>Medical Superintendent</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_add_club">AddClub</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+</resources>

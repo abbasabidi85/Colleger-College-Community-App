@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="0dp"
+    android:backgroundTint="@android:color/transparent"
+    app:strokeWidth="0dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                android:padding="16dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/profile"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lost &amp; Found Clerk "
+                    android:layout_marginLeft="8dp"
+                    android:textSize="18sp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="8dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date: "
+                            android:textSize="10sp"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+                        <TextView
+                            android:id="@+id/lostDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="07/04/2023"
+                            android:textSize="10sp"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+                        <TextView
+                            android:id="@+id/lostTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="12:00"
+                            android:textSize="10sp"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        <TextView
+        android:id="@+id/userLostFoundTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The quick brown fox jumps over the lazy dog and kept running till it found the fountain of youth."
+        android:textSize="15sp"
+        android:paddingBottom="8dp"
+        android:paddingHorizontal="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_gravity="center">
+        <ImageView
+            android:id="@+id/userLostFoundImage"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_gravity="center" />
+        </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.divider.MaterialDivider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

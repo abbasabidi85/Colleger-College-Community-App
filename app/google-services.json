@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "691575000349",
+    "project_id": "colleger-abs",
+    "storage_bucket": "colleger-abs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691575000349:android:8a19c80e8bd6b9bcd5a5f4",
+        "android_client_info": {
+          "package_name": "com.abs.colleger.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691575000349-enpti0m5vdqn5fvod0d417r1hbjscer2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abs.colleger.app",
+            "certificate_hash": "595407bc04e8744004bcd83f3c42ded9cb714761"
+          }
+        },
+        {
+          "client_id": "691575000349-rk4qptc0p14hau3q972felbcfe55vc21.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRRgrhLSusd2oaHFd-4BR9cdywkSnNhgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691575000349-rk4qptc0p14hau3q972felbcfe55vc21.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

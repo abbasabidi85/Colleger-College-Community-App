@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16"
+    android:tint="?attr/colorControlNormal">
+  <path
+      android:pathData="M15,0.5a0.5,0.5 0,0 0,-0.724 -0.447l-8,4A0.5,0.5 0,0 0,6 4.5v3.14L0.342,9.526A0.5,0.5 0,0 0,0 10v5.5a0.5,0.5 0,0 0,0.5 0.5h9a0.5,0.5 0,0 0,0.5 -0.5L10,14h1v1.5a0.5,0.5 0,0 0,0.5 0.5h3a0.5,0.5 0,0 0,0.5 -0.5L15,0.5ZM2,11h1v1L2,12v-1ZM4,11h1v1L4,12v-1ZM3,13v1L2,14v-1h1ZM4,13h1v1L4,14v-1ZM13,3v1h-1L12,3h1ZM8,5h1v1L8,6L8,5ZM9,7v1L8,8L8,7h1ZM8,9h1v1L8,10L8,9ZM10,9h1v1h-1L10,9ZM9,11v1L8,12v-1h1ZM10,11h1v1h-1v-1ZM13,9v1h-1L12,9h1ZM12,11h1v1h-1v-1ZM10,7h1v1h-1L10,7ZM13,7v1h-1L12,7h1ZM11,5v1h-1L10,5h1ZM12,5h1v1h-1L12,5Z"
+      android:fillColor="@android:color/tab_indicator_text"/>
+</vector>

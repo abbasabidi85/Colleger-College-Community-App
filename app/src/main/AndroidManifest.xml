@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-permission-sdk-23 android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".admin.DynamicAdminApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:targetApi="33">
+        <activity
+            android:name=".student.complaint.UserComplaint"
+            android:exported="false" />
+        <activity
+            android:name=".admin.timetable.AddTimetable"
+            android:exported="false" />
+        <activity
+            android:name=".admin.timetable.Timetable"
+            android:exported="false" />
+        <activity
+            android:name=".student.timetable.UserTimetableFragment"
+            android:exported="false" />
+        <activity
+            android:name=".auth.signin.Login"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".auth.otp.PhoneVerification"
+            android:exported="false" />
+        <activity
+            android:name=".auth.otp.EnterOtp"
+            android:exported="false" />
+        <activity
+            android:name=".auth.register.Register"
+            android:exported="false" />
+        <activity
+            android:name=".student.profile.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".admin.profile.AdminProfile"
+            android:exported="false" />
+        <activity
+            android:name=".student.club.UserClub"
+            android:exported="true" />
+        <activity
+            android:name=".student.career.UserCareer"
+            android:exported="true" />
+        <activity
+            android:name=".student.lostfound.UserLostFound"
+            android:exported="true" />
+        <activity
+            android:name=".student.contact.UserContact"
+            android:exported="true" />
+        <activity
+            android:name=".student.file.UserFiles"
+            android:exported="true" />
+        <activity
+            android:name=".student.UserMainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".admin.club.UpdateExistedClub"
+            android:exported="true" />
+        <activity
+            android:name=".admin.club.AddClub"
+            android:exported="true"
+            android:label="@string/title_activity_add_club" />
+        <activity
+            android:name=".admin.club.Club"
+            android:exported="true" />
+        <activity
+            android:name=".admin.career.UpdateExistedPlacement"
+            android:exported="true" />
+        <activity
+            android:name=".admin.career.AddCareerPlacement"
+            android:exported="true" />
+        <activity
+            android:name=".admin.career.Career"
+            android:exported="true" />
+        <activity
+            android:name=".admin.file.Files"
+            android:exported="true" />
+        <activity
+            android:name=".admin.lostfound.AddLostFound"
+            android:exported="true" />
+        <activity
+            android:name=".admin.lostfound.LostFound"
+            android:exported="true" />
+        <activity
+            android:name=".admin.event.Events"
+            android:exported="true" />
+        <activity
+            android:name=".admin.contact.UpdateExistedContact"
+            android:exported="true" />
+        <activity
+            android:name=".admin.contact.AddContact"
+            android:exported="true"
+            android:parentActivityName=".admin.contact.Contact" />
+        <activity
+            android:name=".admin.contact.Contact"
+            android:exported="true"
+            android:parentActivityName=".admin.AdminMainActivity" />
+        <activity
+            android:name=".admin.file.AddFile"
+            android:exported="true"
+            android:parentActivityName=".admin.AdminMainActivity" />
+        <activity
+            android:name=".admin.event.AddEvent"
+            android:exported="true"
+            android:parentActivityName=".admin.AdminMainActivity" />
+        <activity
+            android:name=".admin.AdminMainActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>
