@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">Colleger</string>
     <string name="add_events_and_news">Add events and news</string>
     <string name="add_events">Events &amp; News</string>
@@ -164,7 +164,7 @@
         <item>Professor &amp; Dean</item>
         <item>Professor &amp; Head</item>
         <item>Assistant Professor</item>
-        <item>Assitant Professor(Contractual)</item>
+        <item>Assistant Professor(Contractual)</item>
         <item>Associate Professor</item>
         <item>Associate Professor &amp; Head</item>
         <item>Associate Professor &amp; Principal</item>

@@ -33,7 +33,6 @@ public class UserLectureNotification extends BroadcastReceiver {
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(context);
         Permissions permissions = new Permissions();
 
-       ;
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
             permissions.requestPermissions();
             return;
