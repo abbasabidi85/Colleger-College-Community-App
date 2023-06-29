@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.abs.colleger.app.auth.session.SessionManager;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -64,7 +66,7 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
         registerProgressBar=findViewById(R.id.registerProgressBar);
         enrollmentTv=findViewById(R.id.enrollmentTv);
         emailTv=findViewById(R.id.emailTv);
@@ -146,7 +148,7 @@ public class Register extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
-
+                                                sessionManager.setLoggedIn(true);
                                                 userRef.addValueEventListener(new ValueEventListener() {
                                                     @Override
                                                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -158,6 +160,8 @@ public class Register extends AppCompatActivity {
 
                                                                 if (!mAuthCurrentUser.isEmailVerified()) {
                                                                     mAuthCurrentUser.sendEmailVerification();
+
+                                                                    sessionManager.setAccountRoleAdmin(true);
                                                                     Toast.makeText(Register.this, "Admin Registered Successfully", Toast.LENGTH_LONG).show();
                                                                     Toast.makeText(Register.this, "Verification email sent, please verify your email", Toast.LENGTH_LONG).show();
                                                                     Intent intent = new Intent(Register.this, AdminMainActivity.class);
@@ -165,6 +169,7 @@ public class Register extends AppCompatActivity {
                                                                     startActivity(intent);
                                                                     finish();
                                                                 }else {
+                                                                    sessionManager.setAccountRoleAdmin(true);
                                                                     Intent intent = new Intent(Register.this, AdminMainActivity.class);
                                                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                                                     startActivity(intent);
@@ -176,6 +181,7 @@ public class Register extends AppCompatActivity {
                                                                 // Do something else
                                                                 if (!mAuthCurrentUser.isEmailVerified()) {
                                                                     mAuthCurrentUser.sendEmailVerification();
+                                                                    sessionManager.setAccountRoleUser(true);
                                                                     Toast.makeText(Register.this, "Student Registered Successfully", Toast.LENGTH_LONG).show();
                                                                     Toast.makeText(Register.this, "Verification email sent, please verify your email", Toast.LENGTH_LONG).show();
                                                                     Intent intent = new Intent(Register.this, UserMainActivity.class);
@@ -183,6 +189,7 @@ public class Register extends AppCompatActivity {
                                                                     startActivity(intent);
                                                                     finish();
                                                                 }else {
+                                                                    sessionManager.setAccountRoleUser(true);
                                                                     Intent intent = new Intent(Register.this, UserMainActivity.class);
                                                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                                                                     startActivity(intent);
@@ -192,6 +199,7 @@ public class Register extends AppCompatActivity {
                                                                 // Role is not recognized
                                                                 // Handle the error appropriately
                                                                 mAuth.signOut();
+                                                                sessionManager.clearSession();
                                                                 Toast.makeText(Register.this, "Unable to login", Toast.LENGTH_LONG).show();
                                                                 Intent intent = new Intent(Register.this, Login.class);
                                                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);

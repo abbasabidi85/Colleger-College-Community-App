@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,6 +53,8 @@ import com.google.i18n.phonenumbers.Phonenumber;
 
 public class HomeFragment extends Fragment {
 
+    NestedScrollView lecture;
+    LinearLayout lectureShimmer;
     LinearLayout thisWeek, nextWeek;
     private final static String TAG = "HomeFragment";
     View view;
@@ -80,6 +84,8 @@ public class HomeFragment extends Fragment {
 
         reference= FirebaseDatabase.getInstance().getReference().child("Timetable");
 
+        lectureShimmer=view.findViewById(R.id.lectureShimmer);
+        lecture=view.findViewById(R.id.lecture);
         contactsCardView=view.findViewById(R.id.userContactsCardView);
         clubsCardView=view.findViewById(R.id.userClubsCardView);
         lostFoundCardView=view.findViewById(R.id.userLostFoundCardView);
@@ -230,6 +236,9 @@ public class HomeFragment extends Fragment {
                                     getNextWeekLecture.setLayoutManager((new LinearLayoutManager(getContext())));
                                     userLectureAdapter=new UserLectureAdapter(getContext(),lectureList);
                                     getNextWeekLecture.setAdapter(userLectureAdapter);
+                                    lectureShimmer.setVisibility(View.GONE);
+                                    getNextWeekLecture.setVisibility(View.VISIBLE);
+
                                 }
                             }
 
@@ -284,6 +293,8 @@ public class HomeFragment extends Fragment {
                                     getLecture.setLayoutManager((new LinearLayoutManager(getContext())));
                                     userLectureAdapter=new UserLectureAdapter(getContext(),lectureList);
                                     getLecture.setAdapter(userLectureAdapter);
+                                    lectureShimmer.setVisibility(View.GONE);
+                                    lecture.setVisibility(View.VISIBLE);
                                 }
                             }
 

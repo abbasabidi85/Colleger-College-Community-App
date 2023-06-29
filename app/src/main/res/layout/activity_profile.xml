@@ -198,7 +198,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:paddingStart="6dp"
-                                            android:text="sakshialok2007@gmail.com"
+                                            android:text="test@gmail.com"
                                             android:textSize="14sp" />
                                     </LinearLayout>
                                 </com.google.android.material.card.MaterialCardView>
@@ -226,7 +226,7 @@
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
                                             android:paddingStart="6dp"
-                                            android:text="+919457309337"
+                                            android:text="+919876543210"
                                             android:textSize="14sp" />
                                     </LinearLayout>
                                 </com.google.android.material.card.MaterialCardView>

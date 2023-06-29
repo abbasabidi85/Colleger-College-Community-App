@@ -46,8 +46,8 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
     implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-database:20.2.1'
-    implementation 'com.google.firebase:firebase-storage:20.2.0'
+    implementation 'com.google.firebase:firebase-database:20.2.2'
+    implementation 'com.google.firebase:firebase-storage:20.2.1'
     implementation fileTree(dir: 'libs', include: '*.jar')
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
@@ -57,15 +57,17 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'androidx.navigation:navigation-fragment:2.5.3'
-    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    implementation 'androidx.navigation:navigation-fragment:2.6.0'
+    implementation 'androidx.navigation:navigation-ui:2.6.0'
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.2'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.13.11'
     implementation 'com.hbb20:ccp:2.7.2'
-    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.github.bumptech.glide:glide:4.15.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
     implementation 'com.michalsvec:single-row-calednar:1.0.0'
+    implementation "androidx.core:core-splashscreen:1.0.1"
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
 
 }

@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.abs.colleger.app.R;
+import com.abs.colleger.app.auth.session.SessionManager;
 import com.abs.colleger.app.auth.signin.Login;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.card.MaterialCardView;
@@ -48,7 +49,7 @@ public class AdminProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_profile);
-
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
         toolbar=findViewById(R.id.profileToolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
@@ -169,6 +170,7 @@ public class AdminProfile extends AppCompatActivity {
                                     (dialogInterface, i) -> {
                                         FirebaseAuth mAuth = FirebaseAuth.getInstance();
                                         mAuth.signOut();
+                                        sessionManager.clearSession();
                                         Toast.makeText(AdminProfile.this, "You have logged out successfully", Toast.LENGTH_SHORT).show();
                                         Intent intentSignout =new Intent(AdminProfile.this, Login.class);
                                         intentSignout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);

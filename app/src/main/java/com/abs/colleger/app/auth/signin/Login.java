@@ -137,6 +137,7 @@ public class Login extends AppCompatActivity {
                                                             if (role.equals("admin")) {
                                                                 // User is an admin
                                                                 // Do something
+                                                                sessionManager.setAccountRoleAdmin(true);
                                                                 Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
                                                                 Intent intent = new Intent(Login.this, AdminMainActivity.class);
                                                                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -146,6 +147,7 @@ public class Login extends AppCompatActivity {
                                                             } else if (role.equals("user")) {
                                                                 // User is a regular user
                                                                 // Do something else
+                                                                sessionManager.setAccountRoleUser(true);
                                                                 Toast.makeText(Login.this, "Login successful", Toast.LENGTH_SHORT).show();
 
                                                                 Intent intent = new Intent(Login.this, UserMainActivity.class);
@@ -235,115 +237,6 @@ public class Login extends AppCompatActivity {
         editTextEmail.addTextChangedListener(emailTextWatcher);
 
         editTextPassword.addTextChangedListener(passwordTextWatcher);
-
-        if (sessionManager.isLoggedIn()) {
-            // User is logged in, proceed with the app's main functionality
-            loginLayout.setVisibility(View.GONE);
-            loginLayoutProgressBar.setVisibility(View.VISIBLE);
-            FirebaseAuth mAuthOnStart = FirebaseAuth.getInstance();
-
-            if (mAuthOnStart.getCurrentUser() != null) {
-                String phoneNumberWithCountryCode = mAuthOnStart.getCurrentUser().getPhoneNumber();
-                String defaultCountryIso = telephonyManager.getNetworkCountryIso(); // replace with your default country code
-                try {
-                    PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
-                    Phonenumber.PhoneNumber phoneNumber = phoneUtil.parse(phoneNumberWithCountryCode, defaultCountryIso);
-                    phoneNoWithoutCountryCode = String.valueOf(phoneNumber.getNationalNumber());
-                    Log.d(TAG, "Phone number without country code: " + phoneNoWithoutCountryCode);
-                } catch (NumberParseException e) {
-                    Log.e(TAG, "Error parsing phone number: " + e.getMessage());
-                }
-                Query query = userRef.orderByChild("email").equalTo(mAuth.getCurrentUser().getEmail());
-                query.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()) {
-                            // The enrollment ID exists in the database
-                            // Proceed with creating a new user using the enrollment ID as the custom UID
-                            String emailID = dataSnapshot.child(phoneNoWithoutCountryCode).child("email").getValue(String.class);
-                            if (mAuthOnStart.getCurrentUser().getEmail().equals(emailID)){
-                                userRef.addValueEventListener(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                                        role = dataSnapshot.child(phoneNoWithoutCountryCode).child("role").getValue(String.class);
-                                        if (role != null) {
-                                            if (role.equals("admin")) {
-                                                // User is an admin
-                                                // Do something
-                                                Intent intent = new Intent(Login.this, AdminMainActivity.class);
-                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                startActivity(intent);
-                                                finish();
-
-                                            } else if (role.equals("user")) {
-                                                // User is a regular user
-                                                // Do something else
-                                                Intent intent = new Intent(Login.this, UserMainActivity.class);
-                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-                                                startActivity(intent);
-                                                finish();
-                                            } else {
-                                                // Role is not recognized
-                                                // Handle the error appropriately
-                                                loginLayout.setVisibility(View.VISIBLE);
-                                                loginLayoutProgressBar.setVisibility(View.GONE);
-                                                mAuthOnStart.signOut();
-                                                sessionManager.setLoggedIn(false);
-                                                Toast.makeText(Login.this, "The user role is undefined", Toast.LENGTH_LONG).show();
-                                            }
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                                        // Handle the error appropriately
-                                        loginLayout.setVisibility(View.VISIBLE);
-                                        loginLayoutProgressBar.setVisibility(View.GONE);
-                                        mAuthOnStart.signOut();
-                                        sessionManager.setLoggedIn(false);
-                                        Toast.makeText(Login.this, "Unable to Login", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-
-                            }else{
-                                loginLayout.setVisibility(View.VISIBLE);
-                                loginLayoutProgressBar.setVisibility(View.GONE);
-                                mAuthOnStart.signOut();
-                                sessionManager.setLoggedIn(false);
-                                Toast.makeText(Login.this, "Email & Enrollment doesn't match", Toast.LENGTH_SHORT).show();
-                            }
-
-                        } else {
-                            // The enrollment ID does not exist in the database
-                            // Show an error message or take other appropriate action
-                            loginLayout.setVisibility(View.VISIBLE);
-                            loginLayoutProgressBar.setVisibility(View.GONE);
-                            mAuthOnStart.signOut();
-                            sessionManager.setLoggedIn(false);
-                            Toast.makeText(Login.this, "Invalid Enrollment No.", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        // Handle any errors that occur while trying to read the database
-                        loginLayout.setVisibility(View.VISIBLE);
-                        loginLayoutProgressBar.setVisibility(View.GONE);
-                        Toast.makeText(Login.this, "Database error", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }else {
-                mAuthOnStart.signOut();
-                loginLayout.setVisibility(View.VISIBLE);
-                loginLayoutProgressBar.setVisibility(View.GONE);
-            }
-        } else {
-            // User is not logged in, redirect to the login screen
-            loginLayout.setVisibility(View.VISIBLE);
-            loginLayoutProgressBar.setVisibility(View.GONE);
-            sessionManager.clearSession();
-        }
     }
 
 
