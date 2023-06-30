@@ -38,6 +38,7 @@ import com.abs.colleger.app.auth.signin.Login;
 
 public class Profile extends Fragment {
 
+    MaterialCardView materialCardView, materialCardViewShimmer;
     TelephonyManager telephonyManager;
     TextView userName, userEnrollment, userEmail, userPhone, userCourse, userSemester, userDot;
     Button logoutUser;
@@ -55,6 +56,8 @@ public class Profile extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_profile, container, false);
         SessionManager sessionManager = new SessionManager(getContext());
+        materialCardView=view.findViewById(R.id.materialCardView);
+        materialCardViewShimmer=view.findViewById(R.id.materialCardViewShimmer);
         dotProfile=view.findViewById(R.id.dotProfile);
         userDot=view.findViewById(R.id.dotText);
         enrollmentID=view.findViewById(R.id.enrollmentID);
@@ -108,6 +111,8 @@ public class Profile extends Fragment {
                                     if (role.equals("admin")) {
                                         // User is an admin
                                         // Do something
+                                        materialCardViewShimmer.setVisibility(View.GONE);
+                                        materialCardView.setVisibility(View.VISIBLE);
                                         dotProfile.setVisibility(View.VISIBLE);
                                         userSemester.setVisibility(View.VISIBLE);
                                         userSemester.setText("Admin");
@@ -121,6 +126,8 @@ public class Profile extends Fragment {
                                         course=snapshot.child(phoneNumberWithoutCountryCode).child("course").getValue(String.class);
                                         semester=snapshot.child(phoneNumberWithoutCountryCode).child("semester").getValue(String.class);
                                         enrollment=snapshot.child(phoneNumberWithoutCountryCode).child("enrollment").getValue(String.class);
+                                        materialCardViewShimmer.setVisibility(View.GONE);
+                                        materialCardView.setVisibility(View.VISIBLE);
                                         userCourse.setVisibility(View.VISIBLE);
                                         userDot.setVisibility(View.VISIBLE);
                                         userSemester.setVisibility(View.VISIBLE);

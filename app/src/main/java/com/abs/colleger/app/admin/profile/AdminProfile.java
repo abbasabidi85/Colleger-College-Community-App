@@ -33,7 +33,7 @@ import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
 
 public class AdminProfile extends AppCompatActivity {
-
+    MaterialCardView materialCardView, materialCardViewShimmer;
     TelephonyManager telephonyManager;
     TextView userName, userEnrollment, userEmail, userPhone, userCourse, userSemester, userDot;
     Button logoutUser;
@@ -54,7 +54,8 @@ public class AdminProfile extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        materialCardView=findViewById(R.id.materialCardViewAdmin);
+        materialCardViewShimmer=findViewById(R.id.materialCardViewShimmerAdmin);
         dotProfile=findViewById(R.id.dotProfile);
         userDot=findViewById(R.id.dotText);
         enrollmentID=findViewById(R.id.enrollmentID);
@@ -108,6 +109,8 @@ public class AdminProfile extends AppCompatActivity {
                                     if (role.equals("admin")) {
                                         // User is an admin
                                         // Do something
+                                        materialCardViewShimmer.setVisibility(View.GONE);
+                                        materialCardView.setVisibility(View.VISIBLE);
                                         dotProfile.setVisibility(View.VISIBLE);
                                         userSemester.setVisibility(View.VISIBLE);
                                         userSemester.setText("Admin");
@@ -121,10 +124,14 @@ public class AdminProfile extends AppCompatActivity {
                                         course=snapshot.child(phoneNumberWithoutCountryCode).child("course").getValue(String.class);
                                         semester=snapshot.child(phoneNumberWithoutCountryCode).child("semester").getValue(String.class);
                                         enrollment=snapshot.child(phoneNumberWithoutCountryCode).child("enrollment").getValue(String.class);
+                                        materialCardViewShimmer.setVisibility(View.GONE);
+                                        materialCardView.setVisibility(View.VISIBLE);
                                         userCourse.setVisibility(View.VISIBLE);
                                         userDot.setVisibility(View.VISIBLE);
                                         userSemester.setVisibility(View.VISIBLE);
                                         enrollmentID.setVisibility(View.VISIBLE);
+
+
                                         userName.setText(name);
                                         userEnrollment.setText(enrollment);
                                         userEmail.setText(email);

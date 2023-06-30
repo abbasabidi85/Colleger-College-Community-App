@@ -6,10 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,7 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserFragmentWednesday extends Fragment {
-
+    NestedScrollView lecture;
+    LinearLayout lectureShimmer;
     private final static String TAG = "WednesdayFragment";
     View view;
     private RecyclerView wednesdayLecture;
@@ -55,6 +58,8 @@ public class UserFragmentWednesday extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_wednesday_user,container, false);
         wednesdayLecture=view.findViewById(R.id.user_wednesdayRecyclerView);
+        lectureShimmer=view.findViewById(R.id.lectureShimmerWednesday);
+        lecture=view.findViewById(R.id.lectureWednesday);
         reference= FirebaseDatabase.getInstance().getReference().child("Timetable");
         tuesdayLecture();
         return view;
@@ -90,6 +95,8 @@ public class UserFragmentWednesday extends Fragment {
                                     wednesdayLecture.setLayoutManager((new LinearLayoutManager(getContext())));
                                     userLectureAdapter=new UserLectureAdapter(getContext(),lectureList);
                                     wednesdayLecture.setAdapter(userLectureAdapter);
+                                    lectureShimmer.setVisibility(View.GONE);
+                                    lecture.setVisibility(View.VISIBLE);
                                 }
                             }
 

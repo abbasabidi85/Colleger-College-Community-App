@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "691575000349",
+    "firebase_url": "https://colleger-abs-default-rtdb.firebaseio.com",
     "project_id": "colleger-abs",
     "storage_bucket": "colleger-abs.appspot.com"
   },
@@ -14,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "691575000349-enpti0m5vdqn5fvod0d417r1hbjscer2.apps.googleusercontent.com",
+          "client_id": "691575000349-br81hptbtjh0onvga8c785dquesm1tjj.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.abs.colleger.app",
-            "certificate_hash": "595407bc04e8744004bcd83f3c42ded9cb714761"
+            "certificate_hash": "83823dcf5a5a0c7cd549b47dce283ffa0fa30e50"
           }
         },
         {

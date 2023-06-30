@@ -7,10 +7,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,6 +40,8 @@ import java.util.List;
 
 public class FragmentWednesday extends Fragment {
 
+    NestedScrollView lecture;
+    LinearLayout lectureShimmer;
     private final static String TAG = "WednesdayFragment";
     View view;
     private RecyclerView wednesdayLecture;
@@ -61,6 +65,8 @@ public class FragmentWednesday extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_wednesday,container, false);
         wednesdayLecture=view.findViewById(R.id.admin_wednesdayRecyclerView);
+        lectureShimmer=view.findViewById(R.id.lectureShimmerWednesdayAdmin);
+        lecture=view.findViewById(R.id.lectureWednesdayAdmin);
         wednesdayLecture();
         return view;
     }
@@ -95,6 +101,8 @@ public class FragmentWednesday extends Fragment {
                                     wednesdayLecture.setLayoutManager((new LinearLayoutManager(getContext())));
                                     lectureAdapter=new LectureAdapter(getContext(),lectureList);
                                     wednesdayLecture.setAdapter(lectureAdapter);
+                                    lectureShimmer.setVisibility(View.GONE);
+                                    lecture.setVisibility(View.VISIBLE);
                                 }
                             }
 
