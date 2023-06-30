@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -24,9 +25,8 @@ import java.util.ArrayList;
 import com.abs.colleger.app.R;
 
 public class newsFeedFragment extends Fragment {
-
+    LinearLayout newsfeedShimmer;
     private RecyclerView userEventRecycler;
-    private ProgressBar userEventProgressBar;
     private ArrayList<UserEventData> list;
     private UserNewsfeedAdapter adapter;
     private DatabaseReference reference;
@@ -36,8 +36,8 @@ public class newsFeedFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_news_feed, container, false);
+        newsfeedShimmer=view.findViewById(R.id.newsfeedShimmer);
         userEventRecycler = view.findViewById(R.id.userEventRecycler);
-        userEventProgressBar =view.findViewById(R.id.userEventProgressBar);
 
         reference = FirebaseDatabase.getInstance().getReference().child("Events");
 
@@ -61,13 +61,13 @@ public class newsFeedFragment extends Fragment {
                 }
                 adapter=new UserNewsfeedAdapter(getContext(), list);
                 adapter.notifyDataSetChanged();
-                userEventProgressBar.setVisibility(View.GONE);
                 userEventRecycler.setAdapter(adapter);
+                newsfeedShimmer.setVisibility(View.GONE);
+                userEventRecycler.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                userEventProgressBar.setVisibility(View.GONE);
 
                 Snackbar.make(getContext(), getView(),  databaseError.getMessage(), Snackbar.LENGTH_SHORT).show();
 

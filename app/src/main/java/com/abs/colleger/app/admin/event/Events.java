@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.google.android.material.appbar.MaterialToolbar;
@@ -24,9 +25,8 @@ import java.util.ArrayList;
 import com.abs.colleger.app.R;
 
 public class Events extends AppCompatActivity {
-
+    LinearLayout newsfeedShimmerAdmin;
     private RecyclerView eventRecycler;
-    private ProgressBar progressBar;
     private ArrayList<EventData> list;
     private NewsfeedAdapter adapter;
     private FloatingActionButton addEventFab;
@@ -44,9 +44,8 @@ public class Events extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         addEventFab = findViewById(R.id.addEventFab);
-
+        newsfeedShimmerAdmin=findViewById(R.id.newsfeedShimmerAdmin);
         eventRecycler = findViewById(R.id.eventRecycler);
-        progressBar =findViewById(R.id.eventProgressBar);
 
         reference = FirebaseDatabase.getInstance().getReference().child("Events");
 
@@ -74,13 +73,13 @@ public class Events extends AppCompatActivity {
                 }
                 adapter=new NewsfeedAdapter(Events.this, list);
                 adapter.notifyDataSetChanged();
-                progressBar.setVisibility(View.GONE);
                 eventRecycler.setAdapter(adapter);
+                newsfeedShimmerAdmin.setVisibility(View.GONE);
+                eventRecycler.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                progressBar.setVisibility(View.GONE);
 
                 Snackbar.make(Events.this, findViewById(R.id.eventLayout), databaseError.getMessage(), Snackbar.LENGTH_SHORT).show();
 

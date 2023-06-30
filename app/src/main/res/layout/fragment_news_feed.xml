@@ -3,17 +3,626 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".student.newsfeed.newsFeedFragment">
+   <LinearLayout
+       android:id="@+id/newsfeedShimmer"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:gravity="center_vertical"
+             android:orientation="horizontal"
+             android:paddingTop="16dp"
+             android:padding="16dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/profile"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+               <com.google.android.material.card.MaterialCardView
+                   android:layout_width="match_parent"
+                   android:layout_height="18dp"
+                   android:layout_marginBottom="4dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginEnd="172dp"
+                   style="@style/Widget.Material3.CardView.Filled"/>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:layout_marginLeft="8dp">
+
+                  <com.google.android.material.card.MaterialCardView
+                      android:layout_width="match_parent"
+                      android:layout_height="10dp"
+                      android:layout_marginEnd="248dp"
+                      style="@style/Widget.Material3.CardView.Filled"/>
+
+               </LinearLayout>
+            </LinearLayout>
+
+         </LinearLayout>
+         <com.google.android.material.card.MaterialCardView
+             android:layout_width="match_parent"
+             android:layout_height="15dp"
+             android:layout_marginBottom="8dp"
+             android:layout_marginHorizontal="16dp"
+             style="@style/Widget.Material3.CardView.Filled"/>
+
+
+         <com.google.android.material.divider.MaterialDivider
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="16dp"/>
+      </LinearLayout>
+
+   </LinearLayout>
 
    <androidx.recyclerview.widget.RecyclerView
+       android:visibility="gone"
        android:id="@+id/userEventRecycler"
        android:layout_width="match_parent"
        android:layout_height="match_parent"/>
-
-    <ProgressBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:id="@+id/userEventProgressBar"/>
 
 </RelativeLayout>
