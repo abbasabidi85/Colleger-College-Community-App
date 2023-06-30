@@ -73,7 +73,7 @@ public class HomeFragment extends Fragment {
     TextView currentDayOfWeek;
 
     ImageSlider mainSlider;
-    TextView todayLectures;
+    TextView todayLectures, resources;
     MaterialCardView contactsCardView, lostFoundCardView, clubsCardView, previousQuestionCardView, careerServicesCardView;
 
     @Override
@@ -86,6 +86,7 @@ public class HomeFragment extends Fragment {
 
         lectureShimmer=view.findViewById(R.id.lectureShimmer);
         lecture=view.findViewById(R.id.lecture);
+        resources=view.findViewById(R.id.resources);
         contactsCardView=view.findViewById(R.id.userContactsCardView);
         clubsCardView=view.findViewById(R.id.userClubsCardView);
         lostFoundCardView=view.findViewById(R.id.userLostFoundCardView);
@@ -101,8 +102,8 @@ public class HomeFragment extends Fragment {
        int currentNightMode = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (currentNightMode == Configuration.UI_MODE_NIGHT_YES) {
             // Dark mode is active, set text color to white
-            todayLectures.setTextColor(Color.parseColor("#C0C1C2"));
-
+            todayLectures.setTextColor(Color.parseColor("#2b74bc"));
+            resources.setTextColor(Color.parseColor("#2b74bc"));
             contactsCardView.setCardBackgroundColor(Color.parseColor("#AD2C6D"));
             clubsCardView.setCardBackgroundColor(Color.parseColor("#4B3BA1"));
             lostFoundCardView.setCardBackgroundColor(Color.parseColor("#8A4AA3"));
@@ -110,7 +111,8 @@ public class HomeFragment extends Fragment {
             careerServicesCardView.setCardBackgroundColor(Color.parseColor("#A67A0F"));
         } else {
             // Light mode is active, set text color to blue
-            todayLectures.setTextColor(Color.parseColor("#1f5eaa"));
+            todayLectures.setTextColor(Color.parseColor("#2b74bc"));
+            resources.setTextColor(Color.parseColor("#2b74bc"));
 
             contactsCardView.setCardBackgroundColor(Color.parseColor("#F7C8DB"));
             clubsCardView.setCardBackgroundColor(Color.parseColor("#D3C8F7"));
