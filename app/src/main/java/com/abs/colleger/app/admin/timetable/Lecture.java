@@ -1,7 +1,8 @@
 package com.abs.colleger.app.admin.timetable;
 
 public class Lecture {
-    private String startTime;
+    private String hourOfDay;
+    private String minute;
     private String subject;
     private String teacher;
     private String roomNumber;
@@ -10,20 +11,29 @@ public class Lecture {
     public Lecture() {
     }
 
-    public Lecture(String startTime, String subject, String teacher, String roomNumber, String key) {
-        this.startTime = startTime;
+    public Lecture(String hourOfDay, String minute, String subject, String teacher, String roomNumber, String key) {
+        this.hourOfDay = hourOfDay;
+        this.minute = minute;
         this.subject = subject;
         this.teacher = teacher;
         this.roomNumber = roomNumber;
         this.key=key;
     }
 
-    public String getStartTime() {
-        return startTime;
+    public String getHourOfDay() {
+        return hourOfDay;
     }
 
-    public void setStartTime(String startTime) {
-        this.startTime = startTime;
+    public void setHourOfDay(String hourOfDay) {
+        this.hourOfDay = hourOfDay;
+    }
+
+    public String getMinute() {
+        return minute;
+    }
+
+    public void setMinute(String minute) {
+        this.minute = minute;
     }
 
     public String getSubject() {

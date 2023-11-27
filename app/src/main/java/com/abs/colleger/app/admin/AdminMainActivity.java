@@ -52,7 +52,7 @@ public class AdminMainActivity extends AppCompatActivity implements View.OnClick
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             if (isDarkModeEnabled()) { // check if dark mode is enabled
-                actionBar.setLogo(R.drawable.colleger_logo_word_night);
+                actionBar.setLogo(R.drawable.colleger_logo_word);
             } else {
                 actionBar.setLogo(R.drawable.colleger_logo_word);
             }

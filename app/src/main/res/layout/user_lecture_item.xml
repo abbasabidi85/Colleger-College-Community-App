@@ -40,10 +40,27 @@
                         >
 
                         <TextView
-                            android:id="@+id/startTimeTv"
+                            android:id="@+id/hourOfDay"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
-                            android:text="9:00"
+                            android:text="9"
+                            android:layout_gravity="top"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            style="@style/MaterialAlertDialog.Material3.Title.Text"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text=":"
+                            android:layout_gravity="top"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            style="@style/MaterialAlertDialog.Material3.Title.Text"/>
+                        <TextView
+                            android:id="@+id/minute"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="00"
                             android:layout_gravity="top"
                             android:textStyle="bold"
                             android:textSize="20sp"

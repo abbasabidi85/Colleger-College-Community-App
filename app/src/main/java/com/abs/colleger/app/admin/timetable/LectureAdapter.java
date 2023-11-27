@@ -34,7 +34,8 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.LectureV
     public void onBindViewHolder(@NonNull LectureViewAdapter holder, int position) {
 
         Lecture item = mData.get(position);
-        holder.startTime.setText(item.getStartTime());
+        holder.hourOfDay.setText(item.getHourOfDay());
+        holder.minute.setText(item.getMinute());
         holder.subject.setText(item.getSubject());
         holder.teacher.setText(item.getTeacher());
         holder.roomNumber.setText(item.getRoomNumber());
@@ -48,11 +49,12 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureAdapter.LectureV
 
     public class LectureViewAdapter extends RecyclerView.ViewHolder {
 
-        private TextView startTime, subject, teacher, roomNumber;
+        private TextView hourOfDay, minute, subject, teacher, roomNumber;
 
         public LectureViewAdapter(@NonNull View itemView) {
             super(itemView);
-            startTime = itemView.findViewById(R.id.adminStartTimeTv);
+            hourOfDay = itemView.findViewById(R.id.adminHourOfDay);
+            minute = itemView.findViewById(R.id.adminMinute);
             subject = itemView.findViewById(R.id.adminSubjectNameTv);
             teacher = itemView.findViewById(R.id.adminTeacherNameTv);
             roomNumber = itemView.findViewById(R.id.adminRoomNumberTv);

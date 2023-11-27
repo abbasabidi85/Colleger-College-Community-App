@@ -1,5 +1,8 @@
 package com.abs.colleger.app.student.home;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -26,6 +29,7 @@ import com.abs.colleger.app.student.club.UserClub;
 import com.abs.colleger.app.student.file.UserFiles;
 import com.abs.colleger.app.student.timetable.UserLecture;
 import com.abs.colleger.app.student.timetable.UserLectureAdapter;
+import com.abs.colleger.app.student.timetable.UserLectureNotification;
 import com.abs.colleger.app.student.timetable.UserTimetableFragment;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.google.android.material.card.MaterialCardView;
@@ -43,6 +47,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 import com.abs.colleger.app.R;
 import com.abs.colleger.app.student.contact.UserContact;
@@ -268,7 +273,8 @@ public class HomeFragment extends Fragment {
     private void getLecture() {
         if (currentUser!=null) {
             phone = getUserPhoneNumber();
-
+            AlarmManager alarmManager = (AlarmManager) requireActivity().getSystemService(Context.ALARM_SERVICE);
+            Intent alarmIntent = new Intent(getContext(), UserLectureNotification.class);
             userRef=FirebaseDatabase.getInstance().getReference().child("Users");
             Query query = userRef.orderByChild("id").equalTo(phone);
             query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -290,6 +296,22 @@ public class HomeFragment extends Fragment {
                                     for(DataSnapshot snapshot: dataSnapshot.getChildren()){
                                         UserLecture data = snapshot.getValue(UserLecture.class);
                                         lectureList.add(data);
+                                        assert data != null;
+                                        long alarmTime = calculateAlarmTime(data);
+
+                                        // Create a PendingIntent for the alarm
+                                        PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                                                getContext(),
+                                                Integer.parseInt(data.getHourOfDay()),  // Unique ID for each class
+                                                alarmIntent,
+                                                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE
+                                        );
+                                        // Set the alarm
+                                        alarmManager.setAndAllowWhileIdle(
+                                                AlarmManager.RTC_WAKEUP,
+                                                alarmTime,
+                                                pendingIntent
+                                        );
                                     }
                                     getLecture.setHasFixedSize(true);
                                     getLecture.setLayoutManager((new LinearLayoutManager(getContext())));
@@ -321,6 +343,27 @@ public class HomeFragment extends Fragment {
         }
 
     }
+
+    private long calculateAlarmTime(UserLecture classSchedule) {
+        // Get the current date and time
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(classSchedule.getHourOfDay()));
+        calendar.set(Calendar.MINUTE, Integer.parseInt(classSchedule.getMinute()));
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+
+        calendar.add(Calendar.MINUTE, -30);
+
+        // Check if the calculated time is in the past. If so, move it to the next occurrence.
+        if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
+            calendar.add(Calendar.WEEK_OF_YEAR, 1);
+        }
+
+        // Return the calculated alarm time
+        return calendar.getTimeInMillis();
+    }
+
     private String getUserPhoneNumber() {
         TelephonyManager telephonyManager = (TelephonyManager) getActivity().getSystemService(getActivity().TELEPHONY_SERVICE);
         String phoneNumberWithCountryCode = currentUser.getPhoneNumber();

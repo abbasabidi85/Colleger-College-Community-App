@@ -38,7 +38,7 @@ import java.util.Locale;
 public class AddTimetable extends AppCompatActivity {
 
     LinearLayout addTimetableLayout;
-    TextInputEditText addLectureTime;
+    TextInputEditText addLectureTime, addLectureHour, addLectureMinute;
     MaterialToolbar toolbar;
     private EditText addTimetableSubject, addTimetableTeacher, addTimetableRoom;
     private AutoCompleteTextView addTimetableDaysCat;
@@ -46,7 +46,7 @@ public class AddTimetable extends AppCompatActivity {
     private AutoCompleteTextView addTimetableSemesterCat;
     private AutoCompleteTextView addTimetableSectionCat;
     private Button addLectureBtn;
-    private String weekday, startTime, course, semester, section, subject, teacher, roomNumber;
+    private String weekday, lectureTime, hourOfDay, minutes, course, semester, section, subject, teacher, roomNumber;
     private String selectedCategoryWeekday;
     private String selectedCategoryCourse;
     private String selectedCategorySemester;
@@ -169,12 +169,12 @@ public class AddTimetable extends AppCompatActivity {
         course=selectedCategoryCourse;
         semester=selectedCategorySemester;
         section=selectedCategorySection;
-        startTime=addLectureTime.getText().toString();
+        lectureTime=addLectureTime.getText().toString();
         subject=addTimetableSubject.getText().toString().trim();
         teacher=addTimetableTeacher.getText().toString().trim();
         roomNumber=addTimetableRoom.getText().toString().trim();
 
-        if(startTime.isBlank()){
+        if(lectureTime.isBlank()){
             addLectureTime.setError("Empty");
             addLectureTime.requestFocus();
         } else if (subject.isBlank()) {
@@ -205,7 +205,7 @@ public class AddTimetable extends AppCompatActivity {
 
         String key = uniqueKey;
 
-        Lecture lectureData = new Lecture(startTime, subject, teacher, roomNumber, key);
+        Lecture lectureData = new Lecture(hourOfDay, minutes, subject, teacher, roomNumber, key);
 
         dbRef.child(key).setValue(lectureData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -246,6 +246,10 @@ public class AddTimetable extends AppCompatActivity {
                     hour = 12;
                 addLectureTime.setText(String.format(Locale.getDefault(),"%02d:%02d %s", hour, selectedMinute,
                         selectedHour < 12 ? "AM" : "PM"));
+                hourOfDay=String.valueOf(selectedHour);
+                minutes=String.valueOf(selectedMinute);
+
+
             }
         }, hour, minute, false);
         timePickerDialog.setTitle("Select Lecture Start Time");

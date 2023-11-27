@@ -36,7 +36,8 @@ public class UserLectureAdapter extends RecyclerView.Adapter<UserLectureAdapter.
     public void onBindViewHolder(@NonNull UserLectureViewAdapter holder, int position) {
 
         UserLecture item = mData.get(position);
-        holder.startTime.setText(item.getStartTime());
+        holder.hourOfDay.setText(item.getHourOfDay());
+        holder.minute.setText(item.getMinute());
         holder.subject.setText(item.getSubject());
         holder.teacher.setText(item.getTeacher());
         holder.roomNumber.setText(item.getRoomNumber());
@@ -57,12 +58,13 @@ public class UserLectureAdapter extends RecyclerView.Adapter<UserLectureAdapter.
 
     public class UserLectureViewAdapter extends RecyclerView.ViewHolder {
 
-        private TextView startTime, subject, teacher, roomNumber;
+        private TextView hourOfDay, minute, subject, teacher, roomNumber;
         MaterialCardView notifyButton;
 
         public UserLectureViewAdapter(@NonNull View itemView) {
             super(itemView);
-            startTime = itemView.findViewById(R.id.startTimeTv);
+            hourOfDay = itemView.findViewById(R.id.hourOfDay);
+            minute = itemView.findViewById(R.id.minute);
             subject = itemView.findViewById(R.id.subjectNameTv);
             teacher = itemView.findViewById(R.id.teacherNameTv);
             roomNumber = itemView.findViewById(R.id.roomNumberTv);
