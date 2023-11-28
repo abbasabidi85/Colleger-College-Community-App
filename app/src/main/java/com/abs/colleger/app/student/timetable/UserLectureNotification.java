@@ -9,6 +9,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Build;
 
 import androidx.core.app.ActivityCompat;
@@ -18,6 +19,8 @@ import androidx.core.app.NotificationManagerCompat;
 import com.abs.colleger.app.R;
 import com.abs.colleger.app.student.UserMainActivity;
 import com.abs.colleger.app.student.home.HomeFragment;
+
+import java.util.Calendar;
 
 public class UserLectureNotification extends BroadcastReceiver {
     @Override
@@ -46,11 +49,15 @@ public class UserLectureNotification extends BroadcastReceiver {
             builder = new Notification.Builder(context, "Lectures")
                     .setContentTitle(title)
                     .setContentText(content)
+                    .setColor(context.getColor(R.color.cardview4ColorLight))
                     .setAutoCancel(true)
+                    .setWhen(Calendar.getInstance().getTimeInMillis())
+                    .setShowWhen(true)
                     .setSmallIcon(R.drawable.ic_stat_name);
 
             Intent intent = new Intent(context, UserMainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra("SELECTED_TAB", "1");
 
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_MUTABLE);
             builder.setContentIntent(pendingIntent);

@@ -23,6 +23,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.abs.colleger.app.R;
 import com.abs.colleger.app.student.profile.Profile;
 import com.google.android.material.elevation.SurfaceColors;
+import com.google.android.material.navigation.NavigationBarView;
 
 
 public class UserMainActivity extends AppCompatActivity {
@@ -36,15 +37,23 @@ public class UserMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_main);
 
+        bottomNavigationView=findViewById(R.id.bottomNavigationView);
+
         toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         getWindow().setNavigationBarColor(SurfaceColors.SURFACE_2.getColor(this));
 
-        bottomNavigationView=findViewById(R.id.bottomNavigationView);
         navController= Navigation.findNavController(this, R.id.frame_layout);
 
         NavigationUI.setupWithNavController(bottomNavigationView,navController);
+
+        if (getIntent().getExtras()!=null){
+            bottomNavigationView.setSelectedItemId(R.id.navigation_timetable);
+            bottomNavigationView.getMenu().findItem(R.id.navigation_timetable).setChecked(true);
+
+        }
+
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -54,7 +63,9 @@ public class UserMainActivity extends AppCompatActivity {
                 actionBar.setLogo(R.drawable.colleger_logo_word);
             }
         }
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
