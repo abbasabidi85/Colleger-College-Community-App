@@ -28,6 +28,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class UserMainActivity extends AppCompatActivity {
 
+    int ab;
     private BottomNavigationView bottomNavigationView;
     private NavController navController;
     MaterialToolbar toolbar;
