@@ -27,8 +27,6 @@ The project objective of the Colleger- College Community App is to create a cent
     <img src="Screenshots/user_2.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/user_3.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/user_4.png" alt="Image 2" style="width:216px; height:449px;">
-</div>
-<div>
     <img src="Screenshots/user_5.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/user_6.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/user_7.png" alt="Image 2" style="width:216px; height:449px;">
@@ -40,8 +38,6 @@ The project objective of the Colleger- College Community App is to create a cent
     <img src="Screenshots/admin_2.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/admin_3.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/admin_4.png" alt="Image 2" style="width:216px; height:449px;">
-</div>
-<div>
     <img src="Screenshots/admin_5.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/admin_6.png" alt="Image 2" style="width:216px; height:449px;">
     <img src="Screenshots/admin_7.png" alt="Image 2" style="width:216px; height:449px;">
