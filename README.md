@@ -21,36 +21,28 @@ The project objective of the Colleger- College Community App is to create a cent
 - **The app has implemented account roles i.e** _admin_ **and** _user_, **based upon the account roles the the user will be redirected to the respective activity**
 
 ### App Screenshots
-- ### **Admin**
-
-![Screenshot_20230521-185454_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/a7092fea-b26e-4048-a6ef-b9713aa2bfd7)
-
-![Screenshot_20230521-185505_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/1db61c3c-d1d0-41e8-ac6a-05c19ca7a363)
-
-![Screenshot_20230521-190421_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/cdf6a395-3425-444b-874f-c345065342ec)
-
-![Screenshot_20230521-190426_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/fd6b310c-b12c-496d-b32e-7701d6937d61)
-
-![Screenshot_20230521-194958_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/c3c75c9d-8f57-4ad5-b1cd-f265a412d68d)
-
-![Screenshot_20230521-195039_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/b77533ec-bb23-498a-9c39-f51cc238b772)
-
-![profile admin](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/995d9a9e-4e18-411a-9112-5ccae3eef70d)
-
 - ### **User**
-![Screenshot_20230627-122545_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/78440e7c-dd40-452c-9f9b-f576351a153c)
+<div>
+    <img src="Screenshots/user_1.png" alt="Image 1" style="width:216px; height:449px;">
+    <img src="Screenshots/user_2.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/user_3.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/user_4.png" alt="Image 2" style="width:216px; height:449px;">
+</div>
+<div>
+    <img src="Screenshots/user_5.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/user_6.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/user_7.png" alt="Image 2" style="width:216px; height:449px;">
+</div>
 
-![Screenshot_20230627-122558_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/53c9dd71-dfe9-43bb-b33e-658686649b1e)
-
-![Screenshot_20230627-122609_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/d5be4c0f-54fd-498e-be50-ba791f1f2a84)
-
-![Screenshot_20230627-122619_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/6a8eb43e-17ce-4956-abaf-249287997ed4)
-
-![Screenshot_20230627-122629_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/30a6a90f-4724-43cb-8d36-f127040d3180)
-
-![Screenshot_20230627-122635_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/111e1852-b6ae-4c80-9679-24ce9559a307)
-
-![Screenshot_20230627-122644_Colleger](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/76c3fea2-e273-4190-88e7-bfde49a16126)
-
-![profile](https://github.com/abbasabidi85/Colleger_College_Community_App/assets/75479506/64d6d421-18c6-435e-af72-a09dc1b44d12)
-
+- ### **Admin**
+<div>
+    <img src="Screenshots/admin_1.png" alt="Image 1" style="width:216px; height:449px;">
+    <img src="Screenshots/admin_2.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/admin_3.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/admin_4.png" alt="Image 2" style="width:216px; height:449px;">
+</div>
+<div>
+    <img src="Screenshots/admin_5.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/admin_6.png" alt="Image 2" style="width:216px; height:449px;">
+    <img src="Screenshots/admin_7.png" alt="Image 2" style="width:216px; height:449px;">
+</div>
