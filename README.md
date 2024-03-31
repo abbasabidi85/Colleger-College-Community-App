@@ -1,4 +1,4 @@
-# Colleger- A College Community App
+# Colleger - A College Community App
 
 The project objective of the Colleger- College Community App is to create a centralized platform that facilitates seamless communication and enhances engagement within the college community. 
 
