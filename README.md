@@ -32,7 +32,7 @@ The project objective of the Colleger- College Community App is to create a cent
     <img src="Screenshots/user_8.png" alt="Image 7" style="width:216px; height:449px;">
 </div>
 <div>
-    <img src="Screenshots/notification.jpg" alt="Image 1" style="width:538px; height:109px;">
+    <img src="Screenshots/notification.jpg" alt="Image 1" style="width:50%; height:50%;">
 </div>
 
 - ### **Admin**
